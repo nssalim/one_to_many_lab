@@ -1,5 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
-This will be the home page. 
+
+{% for book in all_books %}
+  <div class="book">
+    <div class="content">
+      Author Name: {{book.author.first_name}} {{book.author.last_name}}
+      <div class="title">
+        <a href="/books/{{book.id}}">{{book.title}}</a>
+        <span class="publisher">Publisher: {{book.publisher}}</span>
+        <span class="genre">Genre: {{book.genre}}</span>
+
+    </div>
+      <div class="buttons">
+
+        <form class="delete-form" action="/books/{{book.id}}/delete" method="POST">
+          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
+
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
 {% endblock %}
