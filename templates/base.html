@@ -11,7 +11,11 @@
   <header>
     <nav>
       <ul class="menu">
-        <li><a href="#">Your Nav Goes Here</a></li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('books.books') }}">Books</a></li>
+        <li><a href="{{ url_for('books.new_book') }}">New Book</a></li>
+        <li><a href="{{ url_for('/books.delete_book') }}">Delete a Book</a></li>
+
       </ul>
     </nav>
   </header>
